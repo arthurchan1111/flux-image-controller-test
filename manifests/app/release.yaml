@@ -9,7 +9,7 @@ spec:
   targetNamespace: default
   chart:
     spec:
-      chart: test
+      chart: test-chart/test
       version: '0.1.0'
       sourceRef:
         kind: HelmRepository

@@ -3,8 +3,8 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
   name: test
-  namespace: default
+  namespace: flux-system
 spec:
   type: "oci"
   interval: 5m0s
-  url: oci://ghcr.io/arthurchan1111/test-chart/test
+  url: oci://ghcr.io/arthurchan1111/

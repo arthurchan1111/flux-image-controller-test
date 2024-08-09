@@ -5,7 +5,7 @@ resources:
   - release.yaml
 configMapGenerator:
   - name: test-values
-    namespace: default
+    namespace: flux-system
     files:
       - values.yaml=values.yaml
 configurations:

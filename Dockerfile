@@ -1,5 +1,5 @@
 
-FROM --platform=arm64 golang:1.22-alpine as app
+FROM golang:1.22-alpine as app
 WORKDIR /app
 COPY go.mod ./
 RUN go mod download

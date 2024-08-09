@@ -6,6 +6,6 @@ resources:
 configMapGenerator:
   - name: test-values
     files:
-      - values.yaml=test-values.yaml
+      - values.yaml=values.yaml
 configurations:
   - kustomizeconfig.yaml

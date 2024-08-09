@@ -7,4 +7,4 @@ metadata:
 spec:
   type: "oci"
   interval: 5m0s
-  url: oci://ghcr.io/arthurchan1111/test-chart
+  url: oci://ghcr.io/arthurchan1111/test-chart/test

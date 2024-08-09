@@ -15,13 +15,41 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: test
-  namespace: default
+  namespace: flux-system
 spec:
   interval: 10m
   targetNamespace: default
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: "/manifests/app"
+  path: "./manifests/app"
   prune: true
   timeout: 1m
+---
+
+
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: test
+  namespace: flux-system
+spec:
+  image: ghcr.io/arthurchan1111/flux-image-controller-test
+  interval: 5m
+
+---
+
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: image-repo-policy
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: test
+  filterTags:
+    pattern: '^main-[a-f0-9]+-(?P<ts>[0-9]+)'
+    extract: '$ts'
+  policy:
+    numerical:
+      order: asc

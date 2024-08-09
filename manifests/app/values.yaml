@@ -1,0 +1,7 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/arthurchan1111/flux-image-controller-test
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "main-33826a82-1723160072" # {"$imagepolicy": "flux-system:image-repo-policy:tag"}

@@ -3,6 +3,9 @@ kind: Kustomization
 resources:
   - repo.yaml
   - release.yaml
+images:
+- name: ghcr.io/arthurchan1111/flux-image-controller-test
+  newTag: "main-8125c8b7-1723163164" # {"$imagepolicy": "flux-system:image-repo-policy:tag"}
 configMapGenerator:
   - name: test-values
     namespace: flux-system

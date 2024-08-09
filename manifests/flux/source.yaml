@@ -17,8 +17,7 @@ metadata:
   name: test
   namespace: flux-system
 spec:
-  interval: 10m
-  targetNamespace: default
+  interval: 1m
   sourceRef:
     kind: GitRepository
     name: flux-system
